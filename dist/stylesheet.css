@@ -1,3 +1,18 @@
+.footer-column-heading, .text-box-heading, .services-item-heading, .slider-second-heading, .slider-first-heading, .h2-white-heading, .h2-heading {
+  font-family: "Raleway", Arial, sans-serif;
+  line-height: 1.2;
+}
+
+.footer-bottom-wrapper, .footer-tweet-content, .footer-recent-post-description, .footer-recent-post-date, .footer-product-description, .recent-posts-post-description, .recent-posts-day, .recent-posts-description, .waxom-mobile .waxom-mobile-description, .video-presentation-description, .latest-projects-project-description, .latest-projects-project-text, .latest-projects-description, .text-box-description, .waxom-is-text, .services-item-text, .slider-text {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 300;
+}
+
+.footer-gray-link:hover, .footer-our-twitter-tweet:hover .footer-tweet-when, .footer-our-twitter-tweet:hover .footer-tweet-content, .footer-recent-post:hover .footer-recent-post-date, .footer-recent-post:hover .footer-recent-post-description, .recent-posts-button:hover, .recent-posts-post:hover .recent-posts-post-description, .recent-posts-post:hover .recent-posts-post-title, .recent-posts-post:hover .recent-posts-post-text, .recent-posts-post:hover .recent-posts-month, .recent-posts-post:hover .recent-posts-day, .latest-projects-load-more-button:hover, .latest-projects-button:hover .latest-projects-button-icon, .latest-projects-project:hover .latest-projects-project-description, .latest-projects-project:hover .latest-projects-project-title, .latest-projects-project:hover .latest-projects-project-text::before, .latest-projects-project:hover .latest-projects-project-text, .latest-projects-project:hover .latest-projects-buttons, .latest-projects-category:hover, .text-box-button:hover, .services-item:hover:after, .services-item:hover .services-item-heading, .services-item:hover .services-item-image-path, .slider-get-started-button:hover, .slider-arrow:hover, .header-button:hover .header-button-icon, .header-menu-link:hover {
+  transition-duration: 0.4s;
+}
+
+/* common styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +22,6 @@
 body {
   max-width: 1920px;
   margin: 0 auto;
-  font-family: "Raleway", Arial, sans-serif;
-  color: #ffffff;
 }
 
 button {
@@ -25,11 +38,15 @@ button:hover {
 }
 
 .h2-heading {
-  font-family: Raleway;
   font-size: 30px;
-  line-height: 1.2;
   font-weight: 600;
   color: #555555;
+}
+
+.h2-white-heading {
+  font-size: 30px;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 .link-span {
@@ -56,6 +73,7 @@ button:hover {
   width: 70%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header-menu-link {
   font-family: "Montserrat", Arial, sans-serif;
@@ -73,14 +91,32 @@ button:hover {
   width: 8%;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .header-button {
   outline: none;
   border: none;
   background: transparent;
 }
+.header-button:hover .header-button-icon {
+  fill: #c7b299;
+}
+.header-search-window {
+  width: 0;
+  height: 0;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 30px;
+  left: -145px;
+}
+.header-search-window:focus {
+  height: 20px;
+  width: 200px;
+  transition-duration: 0.3s;
+}
 
-/* section - slider */
+/* slider-section */
 .slider {
   position: relative;
   text-align: center;
@@ -94,40 +130,50 @@ button:hover {
 }
 .slider-second-heading {
   font-size: 52px;
-  line-height: 1.2;
   font-weight: 800;
-  margin-bottom: 19px;
+  color: white;
 }
 .slider-text-and-arrows {
-  position: relative;
-}
-.slider-left-arrow {
-  padding: 0;
-  font-size: 73px;
-  border: none;
-  background-color: inherit;
-  color: white;
-  font-weight: 100;
-  position: absolute;
-  top: -10px;
-  left: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 52px;
 }
 .slider-text {
   width: 55%;
-  font-family: "Montserrat", Arial, sans-serif;
   line-height: 24px;
-  font-weight: 300;
-  margin: 0 auto 52px;
+  color: white;
+}
+.slider-left-arrow {
+  margin: 20px;
+  border: none;
+  background: none;
+  outline: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  transform: rotate(45deg);
 }
 .slider-right-arrow {
-  padding: 0;
-  font-size: 73px;
+  margin: 20px;
   border: none;
-  background-color: inherit;
-  color: white;
-  position: absolute;
-  top: -10px;
-  right: 0px;
+  background: none;
+  outline: none;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(-45deg);
+}
+.slider-arrow:hover {
+  border-color: #c7b299;
+}
+.slider-arrow:active {
+  opacity: 0.5;
+  transition-duration: 0.2s;
 }
 .slider-get-started-button {
   padding: 20px 40px;
@@ -137,9 +183,15 @@ button:hover {
   background-color: #998675;
   color: white;
   border-radius: 3px;
+  border: none;
+}
+.slider-get-started-button:hover {
+  opacity: 0.7;
+  background-color: white;
+  color: #998675;
 }
 
-/* section - pagination */
+/* pagination-section */
 .pagination {
   width: 200px;
   margin: 0 auto;
@@ -150,15 +202,16 @@ button:hover {
   padding: 7px;
   border: 1px solid white;
   opacity: 0.5;
-  border-radius: 100px;
+  border-radius: 50%;
   margin: 0 7px;
   outline: none;
 }
 .pagination-button:focus {
   background: transparent;
+  border: 1px solid white;
 }
 
-/* section - services */
+/* services-section */
 .services {
   padding-top: 100px;
   padding-bottom: 80px;
@@ -176,19 +229,16 @@ button:hover {
   margin-bottom: 30px;
 }
 .services-item-heading {
-  margin-bottom: 20px;
   font-size: 22px;
-  line-height: 1.2;
   font-weight: 600;
   color: #555555;
+  margin-bottom: 20px;
 }
 .services-item-text {
   text-align: center;
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
-  line-height: 24px;
-  font-weight: 300;
   color: #8c8c8c;
+  line-height: 24px;
   margin-bottom: 30px;
 }
 .services-item:after {
@@ -207,7 +257,7 @@ button:hover {
   border: 1px solid #c7b299;
 }
 
-/* section - waxom-is */
+/* waxom-is-section */
 .waxom-is {
   background-color: #fbfaf8;
   text-align: center;
@@ -219,18 +269,11 @@ button:hover {
   align-items: center;
 }
 .waxom-is-heading {
-  font-size: 30px;
-  line-height: 1.2;
-  font-weight: 600;
-  color: #555555;
   margin-bottom: 24px;
 }
 .waxom-is-text {
   width: 70%;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 16px;
   line-height: 28px;
-  font-weight: 300;
   color: #8c8c8c;
   margin-bottom: 40px;
 }
@@ -257,7 +300,7 @@ button:hover {
   z-index: 1;
 }
 
-/* section - text-box */
+/* text-box-section */
 .text-box {
   padding: 48px 0 49px 0;
   background-image: linear-gradient(90deg, #211b19 0%, #4e3427 100%);
@@ -268,22 +311,26 @@ button:hover {
 }
 .text-box-heading {
   font-size: 28px;
-  line-height: 1.2;
   font-weight: 400;
+  color: white;
   margin-bottom: 8px;
 }
 .text-box-description {
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.2;
-  font-weight: 300;
   color: #615855;
 }
 .text-box-button {
   padding: 20px 29px;
   background-color: #998675;
   border-radius: 3px;
+  border: none;
   color: white;
+}
+.text-box-button:hover {
+  opacity: 0.7;
+  color: #998675;
+  background-color: white;
 }
 
 /* latest-projects-section */
@@ -296,9 +343,7 @@ button:hover {
 }
 .latest-projects-description {
   width: 60%;
-  font-size: 16px;
   line-height: 28px;
-  font-weight: 300;
   color: #8c8c8c;
   margin: 0 auto 40px;
 }
@@ -333,6 +378,9 @@ button:hover {
 .latest-projects-project:hover .latest-projects-project-text {
   background-color: #362f2d;
 }
+.latest-projects-project:hover .latest-projects-project-text::before {
+  border-bottom-color: #362f2d;
+}
 .latest-projects-project:hover .latest-projects-project-title {
   color: white;
 }
@@ -344,6 +392,7 @@ button:hover {
 }
 .latest-projects-image {
   display: block;
+  width: 100%;
 }
 .latest-projects-buttons {
   display: none;
@@ -354,14 +403,26 @@ button:hover {
 }
 .latest-projects-button {
   padding: 5px;
-  background-color: rgba(38, 62, 74, 0.8);
+  background-color: rgba(141, 159, 168, 0.8);
   border: 3px solid rgba(74, 50, 38, 0.8);
   border-radius: 50%;
   margin: 0 15px;
 }
+.latest-projects-button:hover .latest-projects-button-icon {
+  fill: #c7b299;
+}
 .latest-projects-project-text {
   padding: 30px 0 27px 28px;
   background-color: #fbfaf8;
+  position: relative;
+}
+.latest-projects-project-text::before {
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  content: "";
+  border: 15px solid transparent;
+  border-bottom: 10px solid #fbfaf8;
 }
 .latest-projects-project-title {
   font-size: 20px;
@@ -371,18 +432,23 @@ button:hover {
   margin-bottom: 14px;
 }
 .latest-projects-project-description {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 14px;
   line-height: 20px;
-  font-weight: 300;
   color: #d1d1d1;
 }
 .latest-projects-load-more-button {
   padding: 20px 45px;
   background-color: #998675;
   border-radius: 3px;
+  border: 1px solid #998675;
   line-height: 23px;
   font-weight: 800;
   color: #ffffff;
+}
+.latest-projects-load-more-button:hover {
+  opacity: 0.7;
+  background-color: #ffffff;
+  color: #998675;
 }
 
 /* video-presentation-section */
@@ -414,10 +480,8 @@ button:hover {
 }
 .video-presentation-description {
   width: 50%;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 16px;
   line-height: 28px;
-  font-weight: 300;
+  color: white;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -428,28 +492,23 @@ button:hover {
 
 /* waxom-mobile-section */
 .waxom-mobile {
-  padding: 195px 0 183px 0;
-  background: url(./assets/waxom-mobile-section/waxom_mobile_bg.png);
-  background-size: cover;
-  color: #8c8c8c;
+  padding-top: 80px;
+  background-color: #fbfaf8;
 }
 .waxom-mobile-wrapper {
-  margin-left: 45%;
+  display: flex;
+  align-items: center;
 }
 .waxom-mobile .waxom-mobile-heading {
   margin-bottom: 40px;
 }
 .waxom-mobile .waxom-mobile-description {
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 16px;
   line-height: 28px;
-  font-weight: 300;
   color: #8c8c8c;
   margin-bottom: 45px;
 }
 .waxom-mobile .waxom-mobile-features {
   font-family: "Montserrat", Arial, sans-serif;
-  font-size: 16px;
   line-height: 32px;
   font-weight: 300;
   color: #8c8c8c;
@@ -486,6 +545,7 @@ button:hover {
 }
 .counters-counter-amount {
   font-family: "Montserrat", Arial, sans-serif;
+  color: white;
   font-size: 48px;
   line-height: 36px;
   font-weight: 200;
@@ -521,10 +581,7 @@ button:hover {
 .recent-posts-description {
   width: 70%;
   text-align: center;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 16px;
   line-height: 28px;
-  font-weight: 300;
   color: #8c8c8c;
   margin-bottom: 40px;
 }
@@ -552,16 +609,16 @@ button:hover {
   padding: 10px;
   border-radius: 3px 3px 0 0;
   background-color: #363636;
-  font-family: "Montserrat", Arial, sans-serif;
+  color: white;
   font-size: 24px;
   line-height: 20px;
-  font-weight: 300;
 }
 .recent-posts-month {
   padding: 10px 5px;
   width: 100%;
   border-radius: 0 0 3px 3px;
   background-color: #252525;
+  color: white;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 12px;
   line-height: 20px;
@@ -573,6 +630,7 @@ button:hover {
   flex-direction: column;
 }
 .recent-posts-post-title {
+  font-family: "Montserrat", Arial, sans-serif;
   font-size: 20px;
   line-height: 1.2;
   font-weight: 500;
@@ -580,10 +638,8 @@ button:hover {
   margin-bottom: 20px;
 }
 .recent-posts-post-description {
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
   line-height: 22px;
-  font-weight: 300;
   color: #8c8c8c;
   margin-bottom: 27px;
 }
@@ -594,6 +650,15 @@ button:hover {
   line-height: 20px;
   font-weight: 300;
   color: #c7b299;
+  position: relative;
+}
+.recent-posts-read-more-link::after {
+  position: absolute;
+  left: 85px;
+  top: 6px;
+  content: "";
+  border: 5px solid transparent;
+  border-left: 4px solid #c7b299;
 }
 .recent-posts-post:hover .recent-posts-day {
   background-color: #c7b299;
@@ -635,6 +700,7 @@ button:hover {
   justify-content: space-around;
   align-items: center;
 }
+
 /* footer */
 .footer-top-background {
   background-color: #191919;
@@ -653,16 +719,13 @@ button:hover {
 .footer-column-heading {
   padding-top: 20px;
   font-size: 24px;
-  line-height: 1.2;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 45px;
 }
 .footer-product-description {
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
-  font-weight: 300;
   color: #555555;
   margin-bottom: 33px;
 }
@@ -674,11 +737,26 @@ button:hover {
   line-height: 20px;
   font-weight: 400;
   color: #d1d1d1;
+  position: relative;
+}
+.footer-product-read-more-button::before {
+  position: absolute;
+  left: 80px;
+  top: 6px;
+  content: "";
+  border: 5px solid transparent;
+  border-left: 4px solid white;
 }
 .footer-recent-post {
   padding-bottom: 20px;
   border-bottom: 2px solid #252525;
   margin-bottom: 20px;
+}
+.footer-recent-post:hover .footer-recent-post-description {
+  color: #c7b299;
+}
+.footer-recent-post:hover .footer-recent-post-date {
+  color: white;
 }
 .footer-recent-post:last-child {
   margin-bottom: 0px;
@@ -686,18 +764,14 @@ button:hover {
   padding: 0;
 }
 .footer-recent-post-date {
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 12px;
   line-height: 20px;
-  font-weight: 300;
   color: #363636;
   margin-bottom: 10px;
 }
 .footer-recent-post-description {
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 300;
   color: #555555;
 }
 .footer-our-twitter-tweet {
@@ -705,16 +779,20 @@ button:hover {
   border-bottom: 2px solid #252525;
   margin-bottom: 17px;
 }
+.footer-our-twitter-tweet:hover .footer-tweet-content {
+  color: #c7b299;
+}
+.footer-our-twitter-tweet:hover .footer-tweet-when {
+  color: white;
+}
 .footer-our-twitter-tweet:last-child {
   margin-bottom: 0px;
   border: none;
   padding: 0;
 }
 .footer-tweet-content {
-  font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 300;
   color: #555555;
   margin-bottom: 11px;
 }
@@ -749,6 +827,9 @@ button:hover {
   padding: 45px 0 52px 0;
   display: flex;
   justify-content: space-between;
+  font-size: 13px;
+  line-height: 20px;
+  color: #555555;
 }
 .footer-bottom-left-column {
   display: flex;
@@ -756,11 +837,6 @@ button:hover {
 .footer-bottom-left-text {
   padding-right: 10px;
   border-right: 1px solid #1e1e1e;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 300;
-  color: #555555;
   margin-right: 10px;
 }
 .footer-bottom-left-text:last-child {
@@ -774,11 +850,6 @@ button:hover {
 .footer-bottom-right-text {
   padding-right: 10px;
   border-right: 1px solid #1e1e1e;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 20px;
-  font-weight: 300;
-  color: #555555;
   margin-right: 10px;
 }
 .footer-bottom-right-text:last-child {
@@ -794,6 +865,184 @@ button:hover {
   text-decoration: none;
   color: gray;
 }
-.footer-gray-link:nth-child(even) {
+.footer-gray-link:hover {
   color: #c7b299;
+}
+
+/* media */
+@media screen and (max-width: 1170px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrapper {
+    max-width: 480px;
+    padding: 0 10px;
+  }
+
+  .header-slider-wrapper {
+    padding-bottom: 15em;
+  }
+
+  .slider {
+    margin-bottom: 2em;
+  }
+  .slider-first-heading {
+    font-size: 30px;
+  }
+  .slider-second-heading {
+    font-size: 40px;
+    margin-bottom: 1em;
+  }
+  .slider-text-and-arrows {
+    justify-content: center;
+  }
+  .slider-text {
+    width: 100%;
+  }
+  .slider-left-arrow, .slider-right-arrow {
+    display: none;
+  }
+
+  .services-flexbox {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .services-item {
+    width: 55%;
+    margin-bottom: 2em;
+  }
+  .services-item::after {
+    width: 25%;
+  }
+
+  .waxom-is-images {
+    width: 100%;
+  }
+  .waxom-is-images-central {
+    width: 100%;
+  }
+  .waxom-is-images-left {
+    position: initial;
+    width: 100%;
+  }
+  .waxom-is-images-right {
+    position: initial;
+    width: 100%;
+  }
+
+  .text-box {
+    padding: 2em 0;
+  }
+  .text-box-flexbox {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .text-box-text {
+    margin-bottom: 1em;
+  }
+  .text-box-heading {
+    font-size: 20px;
+  }
+  .text-box-description {
+    font-size: 12px;
+  }
+  .text-box-button {
+    width: 40%;
+  }
+
+  .latest-projects-description {
+    width: 100%;
+  }
+  .latest-projects-category {
+    margin-bottom: 1em;
+  }
+  .latest-projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .latest-projects-project {
+    width: 80%;
+  }
+
+  .video-presentation-heading {
+    text-align: center;
+  }
+
+  .waxom-mobile {
+    padding-bottom: 3em;
+  }
+  .waxom-mobile-phone-image {
+    display: none;
+  }
+  .waxom-mobile-features {
+    padding-left: 40px !important;
+  }
+
+  .counters {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  .counters-wrapper {
+    flex-direction: column;
+  }
+  .counters-counter {
+    margin-bottom: 4em;
+  }
+
+  .recent-posts-description {
+    width: 100%;
+  }
+  .recent-posts-container {
+    display: block;
+    width: 80%;
+  }
+
+  .partners-wrapper {
+    flex-direction: column;
+  }
+  .partners-partner-link {
+    margin-bottom: 2em;
+  }
+
+  .footer-top-wrapper {
+    padding: 6em 0;
+    width: 50%;
+    flex-direction: column;
+  }
+  .footer-column-heading {
+    margin-bottom: 1em;
+  }
+  .footer-widget-column-images {
+    width: 100%;
+  }
+  .footer-widget-image {
+    width: 100%;
+  }
+  .footer-bottom-wrapper {
+    padding: 6em 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-bottom-left-column {
+    flex-direction: column;
+  }
+  .footer-bottom-left-text {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-bottom-right-column {
+    flex-direction: column;
+  }
+  .footer-bottom-right-text {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
 }
